@@ -11,8 +11,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-<<<<<<< Updated upstream
-=======
   {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
@@ -21,7 +19,6 @@ const routes: Routes = [
     path: 'log-in',
     loadChildren: () => import('./log-in/log-in.module').then( m => m.LogInPageModule)
   },
->>>>>>> Stashed changes
 ];
 
 @NgModule({

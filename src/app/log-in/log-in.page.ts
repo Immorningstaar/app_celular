@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInPage implements OnInit {
 
-  email: string ='ejemplo@email.com';
+  
 
   constructor() { }
 

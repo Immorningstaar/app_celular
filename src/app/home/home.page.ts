@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -15,15 +17,18 @@ export class HomePage {
   educacion: string = '';
   fechaNacimiento: string = '';
 
-  constructor(
-    private route: ActivatedRoute,
-    private alertController: AlertController
-  ) {}
+constructor(
+  private router: Router,
+  private alertController: AlertController
+) {
+  const nav = this.router.getCurrentNavigation();
+  this.email = nav?.extras?.state?.['email'] || 'Invitado';
+}
+
 
   ngOnInit() {
     // Obtener el email desde la navegación (ajusta según tu lógica)
-    this.email = history.state.email || '';
-    console.log('Email recibido:', this.email);
+    this.email = localStorage.getItem('email') || 'Invitado';
   }
 
   limpiarCampos() {

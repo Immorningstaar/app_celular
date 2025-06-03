@@ -60,6 +60,7 @@ export class LogInPage  {
 
     // Si todas las validaciones son correctas, navega a la página "home"
      this.router.navigate(['/home'], { state: { user: this.email } });
+     
   }
 
 }

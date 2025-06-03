@@ -38,12 +38,12 @@ constructor(
     this.fechaNacimiento = '';
   }
 
-  async mostrarInfo() {
-    const alert = await this.alertController.create({
-      header: 'Información',
-      message: `Nombre: ${this.nombre} <br> Apellido: ${this.apellido}`,
-      buttons: ['OK']
-    });
-    await alert.present();
-  }
+async mostrarInfo() {
+  const alert = await this.alertController.create({
+    header: 'Usuario',
+    message: `Su nombre es: ${this.nombre} ${this.apellido}`,
+    buttons: ['Yes']
+  });
+  await alert.present();
+}
 }

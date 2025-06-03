@@ -31,9 +31,12 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Fecha de Nacimiento</ion-label>
-    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="fechaNacimiento"></ion-datetime>
-  </ion-item>
+  <ion-label position="stacked">Fecha Nacimiento</ion-label>
+  <ion-input
+    type="date"
+    [(ngModel)]="fechaNacimiento">
+  </ion-input>
+</ion-item>
 
   <!-- Botones -->
   <ion-button expand="block" color="danger" (click)="limpiarCampos()">Limpiar</ion-button>

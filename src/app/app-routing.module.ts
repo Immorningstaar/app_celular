@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
+/*apuntes mios, se agrega despues del "./" el nombre de la carpeta para tener la ruta
+loadchildren sirve para que no cargar todos los componentes al arrancar la app, y
+Angular solo los carga cuando el usuario accede a esa ruta. */
 const routes: Routes = [
   {
     path: 'log-in',

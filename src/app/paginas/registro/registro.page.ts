@@ -10,9 +10,10 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegistroPage implements OnInit {
 
+  //Variables para almacenar datos del formulario.
   nombre: any = '';
   apellido: any = '';
-  selectedOption: any = ''; // nivel de estudios
+  selectedOption: any = ''; // nivel de completero
   selectedDate: any = '';
   usuario: any = '';
   password: any = '';

@@ -35,3 +35,48 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+//arreglando el menu para que se vea blanco
+ion-menu {
+  --background: #ffffff; /* fondo blanco */
+  color: #000000; /* texto negro para buen contraste */
+}
+
+ion-content.menu-content {
+  --background: #ffffff; /* asegura que el contenido del menú también sea blanco */
+}
+//agregando el fondo
+ion-list,
+ion-item {
+  background: transparent; /* evita fondo gris por defecto */
+  color: #000000; /* texto visible */
+}
+
+.page-background ion-content {
+  --background: url('/assets/img/fondo.jpg') no-repeat center left / cover;
+}
+
+ion-header {
+  --background: transparent;
+  --ion-toolbar-background: transparent;
+  --ion-toolbar-border-color: transparent;
+}
+
+ion-header,
+ion-toolbar,
+ion-buttons,
+app-company-name {
+  color: #131110;
+}
+
+.header-md {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.title_tab h2 {
+  text-align: center;
+  color: #ff5e3a; /* rojo pastel */
+  font-weight: bold;
+  font-size: 1.4rem;
+}

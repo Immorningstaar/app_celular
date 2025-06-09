@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
+  host: {'class': 'page-background'},
   standalone: false,
 })
 export class HomePage {

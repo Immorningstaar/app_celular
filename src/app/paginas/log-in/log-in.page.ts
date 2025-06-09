@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-log-in',
@@ -8,17 +8,18 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./log-in.page.scss'],
   standalone: false,
 })
-export class LogInPage  {
-
+export class LogInPage {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router,
-              private alertController: AlertController
+  constructor(
+    private router: Router,
+    private alertController: AlertController,
+    private navCtrl: NavController
   ) { }
 
-   // Método para mostrar alerta de error
-   async mostrarAlerta(mensaje: string) {
+  // Método para mostrar alerta de error
+  async mostrarAlerta(mensaje: string) {
     const alert = await this.alertController.create({
       header: 'Error',
       message: mensaje,
@@ -60,8 +61,10 @@ export class LogInPage  {
 
     // Si todas las validaciones son correctas, navega a la página "home"
     localStorage.setItem('email', this.email);
-     this.router.navigate(['/home'], { state: { email: this.email } });
-     
+    this.router.navigate(['/home'], { state: { email: this.email } });
   }
 
+  registro() {
+    this.navCtrl.navigateForward('/registro');
+  }
 }

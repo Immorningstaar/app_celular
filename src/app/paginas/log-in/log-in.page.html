@@ -24,7 +24,11 @@
       <ion-button expand="block" color="success" (click)="login()">Iniciar Sesión</ion-button>
       <div class="ion-text-center ion-margin-top">
         <ion-text>
-          <p><a href="#">¿No tienes cuenta? <strong>Regístrate</strong></a></p>
+          <p>
+            <ion-button fill="clear" (click)="registro()" color="primary" class="register-button">
+              ¿No tienes cuenta? <strong>Registrate</strong>
+            </ion-button>
+          </p>
           <p><a href="#"><strong>¿Olvidaste tu contraseña?</strong></a></p>
         </ion-text>
       </div>

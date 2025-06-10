@@ -10,40 +10,62 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Mostrar correo del usuario -->
-  <ion-text color="primary">
-    <h2>Bienvenido: {{ email }}</h2>
-  </ion-text>
 
-  <!-- Formulario de información adicional -->
-  <ion-item>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input [(ngModel)]="nombre"></ion-input>
-  </ion-item>
+  <!-- Avatar y progreso del usuario -->
+  <ion-card class="user-card">
+    <img alt="Avatar de usuario" src="../../assets/img/avatar completo.jpg" class="user-avatar" />
 
-  <ion-item>
-    <ion-label position="floating">Apellido</ion-label>
-    <ion-input [(ngModel)]="apellido"></ion-input>
-  </ion-item>
+    <ion-card-header>
+      <ion-card-title>
+        <h2><strong>{{ bienvenidos }}</strong></h2>
+      </ion-card-title>
+      <ion-card-subtitle>{{ email }}</ion-card-subtitle>
+    </ion-card-header>
 
-  <ion-item>
-    <ion-label position="floating">Nivel de Educación</ion-label>
-    <ion-select [(ngModel)]="educacion">
-      <ion-select-option value="Basica">Basica</ion-select-option>
-      <ion-select-option value="Media">Media</ion-select-option>
-      <ion-select-option value="Universitaria">Universitaria</ion-select-option>
-    </ion-select>
-  </ion-item>
+    <ion-card-content>
+      <p>Nivel de completo adicto 🌭</p>
+      <!-- Barra de progreso -->
+      <ion-progress-bar value="0.6" color="warning"></ion-progress-bar>
+      <p style="margin-top: 8px; font-size: 0.9em;">60% hasta el próximo nivel</p>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-item>
-  <ion-label position="stacked">Fecha Nacimiento</ion-label>
-  <ion-input
-    type="date"
-    [(ngModel)]="fechaNacimiento">
-  </ion-input>
-</ion-item>
 
-  <!-- Botones -->
-  <ion-button expand="block" color="danger" (click)="limpiarCampos()">Limpiar</ion-button>
-  <ion-button expand="block" color="success" (click)="mostrarInfo()">Mostrar</ion-button>
+
+
+
+<div class="locales-info"> 
+    <h2>Completos cerca de mi</h2>
+  </div>
+
+ <!-- Cards de negocios de completo -->
+ <ion-card class="local-card">
+  <img src="../../assets/img/cevasco.jpg" alt="Cevasco" />
+  <ion-card-header>
+    <ion-card-title>Cevasco</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    De los mejores completos y sándwiches desde 1977.
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="local-card">
+  <img src="../../assets/img/doggis.jpg" alt="Doggis" />
+  <ion-card-header>
+    <ion-card-title>Doggis</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Nada del otro mundo, pero salva.
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="local-card">
+  <img src="../../assets/img/latia.jpg" alt="La tia" />
+  <ion-card-header>
+    <ion-card-title>La tia</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    De lo que salvan cuando se acaba el carrete.
+  </ion-card-content>
+</ion-card>
 </ion-content>

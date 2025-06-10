@@ -7,6 +7,7 @@ import { AlertController, NavController } from '@ionic/angular';
   templateUrl: './log-in.page.html',
   styleUrls: ['./log-in.page.scss'],
   standalone: false,
+  host: { 'class': 'page-background' }
 })
 export class LogInPage {
   email: string = '';

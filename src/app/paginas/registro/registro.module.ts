@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';  
 import { MatIconModule } from '@angular/material/icon';  
 
+import { FormatearFechaPipe } from 'src/app/pipes/formatear-fecha.pipe';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule, 
     MatIconModule 
   ],
-  declarations: [RegistroPage]  // <-- agrega esta línea
+  declarations: [RegistroPage,FormatearFechaPipe], 
+  providers: [FormatearFechaPipe]  // <-- agrega esta línea
 })
 export class RegistroPageModule {}

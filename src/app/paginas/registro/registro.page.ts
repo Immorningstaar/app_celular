@@ -1,25 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular'; 
 import { AlertController } from '@ionic/angular';  
+import { FormatearFechaPipe } from 'src/app/pipes/formatear-fecha.pipe';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
-  standalone: false
+  standalone: false,
+  host: { 'class': 'page-background' }
 })
 export class RegistroPage implements OnInit {
 
-  //Variables para almacenar datos del formulario.
-  nombre: any = '';
-  apellido: any = '';
-  selectedOption: any = ''; // nivel de completero
-  selectedDate: any = '';
-  usuario: any = '';
-  password: any = '';
+  // Variables para almacenar datos del formulario
+  nombre: string = '';
+  apellido: string = '';
+  selectedOption: string = ''; // nivel de complejidad
+  selectedDate: string = '';
+  usuario: string = '';
+  password: string = '';
 
-  constructor(private alertController: AlertController, 
-              private menu: MenuController) { }
+  constructor(
+    private alertController: AlertController, 
+    private menu: MenuController,
+    private formatearFechaPipe: FormatearFechaPipe
+  ) { }
 
   ngOnInit() {
     this.menu.close("mainMenu");
@@ -36,10 +41,12 @@ export class RegistroPage implements OnInit {
   }
 
   guardar() { 
+    const fechaFormateada = this.formatearFechaPipe.transform(this.selectedDate);
+
     if (this.nombre.trim() === '' || this.apellido.trim() === '') {
       this.presentAlert('Error: nombre y apellido vacíos');
     } else {
-      this.presentAlert('Datos Correctos  usuario: ' + this.nombre + ' fecha nacimiento: ' + this.selectedDate);
+      this.presentAlert('Datos Correctos - usuario: ' + this.nombre + ' fecha nacimiento: ' + fechaFormateada);
     }
   }
 }
